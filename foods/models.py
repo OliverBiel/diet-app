@@ -4,7 +4,7 @@ from django.db import models
 
 class Food(models.Model):
     name = models.CharField(max_length=250)
-    serving = models.PositiveIntegerField()     #Porção da comida necessariamente em gramas, assim como todos os macros.
+    portion = models.PositiveIntegerField()     #Porção da comida necessariamente em gramas, assim como todos os macros.
     carbo = models.PositiveIntegerField()
     protein = models.PositiveIntegerField()
     fat = models.PositiveIntegerField()

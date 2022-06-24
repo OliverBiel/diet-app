@@ -1,11 +1,11 @@
 from rest_framework.serializers import ModelSerializer
-from foods.api.serializers import FoodSerializer
+from servings.api.serializers import ServingSerializer
 from meals.models import Meal
 
 
 class MealSerializer(ModelSerializer):
-    foods = FoodSerializer(many=True)
+    foods = ServingSerializer(many=True)
 
     class Meta:
         model = Meal
-        fiels = ['name', 'foods']
+        fields = ['name', "foods.name"]
