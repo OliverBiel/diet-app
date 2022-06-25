@@ -20,12 +20,14 @@ from rest_framework import routers
 from foods.api.viewsets import FoodViewSet
 from meals.api.viewsets import MealViewSet
 from servings.api.viewsets import ServingViewSet
+from menus.api.viewsets import MenuViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'foods', FoodViewSet)
 router.register(r'meals', MealViewSet)
 router.register(r'servings', ServingViewSet)
+router.register(r'menus', MenuViewSet)
 
 
 urlpatterns = [
