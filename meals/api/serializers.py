@@ -1,10 +1,10 @@
 from rest_framework.serializers import ModelSerializer
-from rest_framework import serializers
+from drf_writable_nested import WritableNestedModelSerializer
 from servings.api.serializers import ServingSerializer
 from meals.models import Meal
 
 
-class MealSerializer(ModelSerializer):
+class MealSerializer(WritableNestedModelSerializer, ModelSerializer):
     foods = ServingSerializer(many=True)
 
     class Meta:
