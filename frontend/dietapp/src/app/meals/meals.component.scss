@@ -1,0 +1,60 @@
+:host{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.meal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+
+    padding: 15px 0px;
+    border-top: 1px solid #797878;
+
+    .meal-title {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .headers {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .content{
+        font-size: 15px;
+        color: #444444;
+    }
+
+    .meal-data {
+        padding: 10px;
+        width: 80%;
+        
+        border-radius: .3rem;
+        
+        tr {
+            display: flex;
+            justify-content: space-evenly;
+            align-content: center;
+            padding: 5px 0px;
+
+            th{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+  
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
