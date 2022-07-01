@@ -1,1 +1,13 @@
-<p>meals works!</p>
+<section *ngFor="let meal of meals">
+    <h1>{{ meal.name }}</h1>
+    <table>
+        <tr>
+            <th>Alimento</th>
+            <th>Quantidade</th>
+        </tr>
+        <tr *ngFor="let food of meal.foods">
+            <th >{{ food.foods }}</th>
+            <th>{{ food.quantity }} gramas</th>
+        </tr>
+    </table>
+</section>

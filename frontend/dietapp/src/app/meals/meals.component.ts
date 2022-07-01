@@ -9,21 +9,19 @@ import { MealsServiceService } from './meals-service.service';
 })
 export class MealsComponent implements OnInit {
 
-  meals: Meal[];
+  meals!: Meal[];
 
   constructor( private api: MealsServiceService ) { 
-    this.meals = [];
    }
 
   ngOnInit(): void {
     this.getMeals();
-    console.log(this.meals);
   }
-
+  
   getMeals(){
     this.api.getMeals().subscribe(data => {
       this.meals = data;
     });
-  }
+  };
 
 }
