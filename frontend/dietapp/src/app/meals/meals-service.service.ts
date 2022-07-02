@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Meal } from './meal.model';
+import { Food } from './food.model';
 
 
 @Injectable({
@@ -24,5 +25,8 @@ export class MealsServiceService {
 
   public getMeals(): Observable<Meal[]>{
     return this.httpClient.get<Meal[]>(this.rootUrl + 'meals/');
+  }
+  public getFood(id: number): Observable<Food>{
+    return this.httpClient.get<Food>(this.rootUrl + 'foods/' + id + '/');
   }
 }

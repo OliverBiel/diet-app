@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Food } from './food.model';
 import { Meal } from './meal.model';
 import { MealsServiceService } from './meals-service.service';
 
@@ -10,6 +11,7 @@ import { MealsServiceService } from './meals-service.service';
 export class MealsComponent implements OnInit {
 
   meals!: Meal[];
+  food!: Food;
 
   constructor( private api: MealsServiceService ) { 
    }
@@ -22,6 +24,14 @@ export class MealsComponent implements OnInit {
     this.api.getMeals().subscribe(data => {
       this.meals = data;
     });
+  };
+
+  getFood(id : number){
+    this.api.getFood(id).subscribe(data => {
+      food: Food;
+      this.food = data;
+    });
+    return this.food;
   };
 
 }
