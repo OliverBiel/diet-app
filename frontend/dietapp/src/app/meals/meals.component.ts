@@ -11,13 +11,14 @@ import { MealsServiceService } from './meals-service.service';
 export class MealsComponent implements OnInit {
 
   meals!: Meal[];
-  food!: Food;
+  foods!: Food[];
 
   constructor( private api: MealsServiceService ) { 
    }
 
   ngOnInit(): void {
     this.getMeals();
+    this.getFoods();
   }
   
   getMeals(){
@@ -26,12 +27,11 @@ export class MealsComponent implements OnInit {
     });
   };
 
-  getFood(id : number){
-    this.api.getFood(id).subscribe(data => {
-      food: Food;
-      this.food = data;
+  getFoods(){
+    this.api.getFood().subscribe(data => {
+      this.foods = data;
     });
-    return this.food;
+    return this.foods;
   };
 
 }

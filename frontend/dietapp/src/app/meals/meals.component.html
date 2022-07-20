@@ -6,7 +6,7 @@
             <th>Quantidade</th>
         </tr>
         <tr *ngFor="let food of meal.foods" class="content">
-            <th>{{ getFood(food.foods).name }}</th>
+            <th>{{ food.foods }}</th>
             <th>{{ food.quantity }} gramas</th>
         </tr>
     </table>

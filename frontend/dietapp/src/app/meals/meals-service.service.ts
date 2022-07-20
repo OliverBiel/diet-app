@@ -26,7 +26,7 @@ export class MealsServiceService {
   public getMeals(): Observable<Meal[]>{
     return this.httpClient.get<Meal[]>(this.rootUrl + 'meals/');
   }
-  public getFood(id: number): Observable<Food>{
-    return this.httpClient.get<Food>(this.rootUrl + 'foods/' + id + '/');
+  public getFood(): Observable<Food[]>{
+    return this.httpClient.get<Food[]>(this.rootUrl + 'foods/');
   }
 }
